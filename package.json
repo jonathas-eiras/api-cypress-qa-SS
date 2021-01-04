@@ -1,0 +1,35 @@
+{
+  "name": "express-mongo-app",
+  "version": "1.0.0",
+  "description": "Rest Api demo using node, express and mongoDB",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "cy:api": "cypress open --project ./src/test-api",
+    "cy:ui": "cypress open --project src/dojo-ui",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jhoneiras",
+  "license": "ISC",
+  "keywords": [
+    "RestAPI",
+    "Express",
+    "Node",
+    "MongoDB",
+    "Books"
+  ],
+  "dependencies": {
+    "-": "^0.0.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.9",
+    "nodemon": "^2.0.6",
+    "request": "^2.88.2",
+    "save-dev": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "cypress": "^6.2.0",
+    "mongodb": "^3.6.3"
+  }
+}
