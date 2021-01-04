@@ -4,6 +4,10 @@
             "title": "Livro Desafio QA",
             "author": "JJ"
     
+    },
+    "invalidBook":{
+        "title": "",
+        "author": "JJ"
     }
 }
 

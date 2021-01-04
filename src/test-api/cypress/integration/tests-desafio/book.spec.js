@@ -2,6 +2,7 @@
 
 const baseUrl = Cypress.config("baseUrl");
 const defaultBook = Cypress.config("defaultBook");
+const invalidBook = Cypress.config("invalidBook");
 
 describe("Recover Book", () => {
     beforeEach(() => {
@@ -52,6 +53,19 @@ describe("Create new Book", () => {
 
 });
 
+describe("Create new Invalid Book", () => {
+    beforeEach(() => {
+        cy.request("POST", `${baseUrl}/books`, invalidBook).as("insertBook")
+    });
+
+    it("Validate status", () => {
+        cy.get("@insertBook")
+        .its("status")
+        .should("equal", 400);  
+    });
+
+});
+
 describe("Delete a Book", () => {
     before(() => {
         cy.task("book.deleteAll").then((result) => {
@@ -75,6 +89,19 @@ describe("Delete a Book", () => {
             .should("equal", 200);
     });
 
+});
+
+describe("Delete a Book Id not Found", () => {
+        before(() => {
+            const id = "5ff36f634f81bea8895843ac"
+            cy.request("DELETE", `${baseUrl}/books/${id}`).as("deleteBook");
+        });
     
+    
+        it("Validate status", () => {
+            cy.get("@deleteBook")
+                .its("status")
+                .should("equal", 404);
+        });
 
 });
