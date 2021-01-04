@@ -4,8 +4,8 @@ Repositório para o desafio de qa da South System.
 Configurações necessárias:
 
 Instalar
-	nodejs
-	mongodb
+- nodejs
+- mongodb
   
 Executar os comandos na pasta do projeto:
 - npm init -y
