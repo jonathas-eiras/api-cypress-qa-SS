@@ -1,7 +1,7 @@
 const { mongoDb } = require("./config.json");
 const { MongoClient, ObjectID } = require("mongodb");
 
-class bookRepository {
+class BookRepository {
     constructor() {
         this.connect();
     }
@@ -9,7 +9,7 @@ class bookRepository {
     connect = async () => {
         const client = new MongoClient(mongoDb.connectionString);
         await client.connect();
-        this.collection = client.db(mongoDb.database).collection("books");
+        this.collection = client.db(mongoDb.database).collection("book");
     }
 
     insertNew = async (object) => {
@@ -45,4 +45,4 @@ class bookRepository {
     }
 }
 
-module.exports = UserRepository;
+module.exports = BookRepository;

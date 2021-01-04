@@ -31,5 +31,13 @@
   "devDependencies": {
     "cypress": "^6.2.0",
     "mongodb": "^3.6.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathas-eiras/desafio-qa-southSystem.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonathas-eiras/desafio-qa-southSystem/issues"
+  },
+  "homepage": "https://github.com/jonathas-eiras/desafio-qa-southSystem#readme"
 }

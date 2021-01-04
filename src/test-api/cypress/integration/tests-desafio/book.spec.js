@@ -54,12 +54,12 @@ describe("Create new Book", () => {
 
 describe("Delete a Book", () => {
     before(() => {
-        cy.task("books.deleteAll").then((result) => {
+        cy.task("book.deleteAll").then((result) => {
             if(result) {
                 cy.task("book.insert").then((result) => {
                     if(result) {
-                        cy.task("books.ids").then((result) => {
-                            const id = result[0];
+                        cy.task("book.ids").then((result) => {
+                            const id = result[1];
                             cy.request("DELETE", `${baseUrl}/books/${id}`).as("deleteBook");
                         });
                     }
@@ -68,10 +68,13 @@ describe("Delete a Book", () => {
         });
     });
 
+
     it("Validate status", () => {
         cy.get("@deleteBook")
             .its("status")
             .should("equal", 200);
     });
-});
 
+    
+
+});
