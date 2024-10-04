@@ -1,2 +1,2 @@
 # qa
-Repositório para o desafio de qa da South System.
+Repositório para o desafio de qa da SS
